@@ -1,9 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 View the live demo here on [Netlify](https://dn-react-login.netlify.com/).
 
 # react-login-logwin
 The purpose of this app is to demonstrate some basic but fundamental topics of React.
 - Conditional Rendering
+- Basic Form Validation
 - React Hooks
 - SCSS Modules
 
