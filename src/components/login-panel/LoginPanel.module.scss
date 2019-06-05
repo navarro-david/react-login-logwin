@@ -104,11 +104,11 @@ $color_gradient_2: #182848;
     }
     &_form {
       @include card_column_mixin();
-      flex: 1 0 0;
+      flex: 4 0 0;
     }
     &_content {
       @include card_column_mixin();
-      flex: 1 0 0;
+      flex: 5 0 0;
       background: $color_gradient_1;
       background: linear-gradient(
         45deg,
