@@ -4,7 +4,7 @@ $color_gradient_2: #182848;
 @mixin input-focus-state-mixin($hex-color: #969696) {
   &:focus {
     box-shadow: none;
-    box-shadow: 0 0 0 1px rgba($hex-color, 0.56);
+    box-shadow: 0 0 0 2px rgba($hex-color, 0.56);
     border-color: $hex-color;
     outline: none;
   }

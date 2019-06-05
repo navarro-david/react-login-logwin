@@ -15,7 +15,7 @@ function LoginPanel() {
     inputValues["name_last"].length > 0 &&
     inputValues["email"].length > 0;
 
-  const isSSNEntered = inputValues["ssn"].length >= 9;
+  const isSSNEntered = inputValues["ssn"].length === 9;
 
   const handleInputChange = event => {
     setInputValues({ ...inputValues, [event.target.name]: event.target.value });
