@@ -23,15 +23,13 @@ $color_gradient_2: #182848;
 }
 
 .effect_scary_text {
-    // text-transform: uppercase;
-    // letter-spacing: 2px;
+    letter-spacing: 2px;
     color: #ed213a;
     transition: all 0.3s ease-in-out;
 }
 
 .btn_submit {
     $btn_submit_height: 50px;
-    @include input-focus-state-mixin($color_gradient_1);
 
     position: relative;
     padding: 0 2rem;
@@ -66,8 +64,10 @@ $color_gradient_2: #182848;
         border-radius: $btn_submit_height / 2;
     }
 
-    &:hover:not([disabled]) {
+    &:hover:not([disabled]), &:focus:not([disabled]) {
         filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.25));
+        outline: none;
+        box-shadow: none;
         &::before {
             opacity: 1;
         }
