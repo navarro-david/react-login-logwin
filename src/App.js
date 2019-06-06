@@ -1,14 +1,14 @@
-import React from 'react';
-import './App.scss'
+import React from "react";
+import "./App.scss";
 
-import LoginPanel from './components/login-panel/LoginPanel'
+import LoginPanel from "./components/login-panel/LoginPanel";
 
 function App() {
-  return (
-    <div className="App">
-      <LoginPanel />
-    </div>
-  );
+    return (
+        <div className="App">
+            <LoginPanel />
+        </div>
+    );
 }
 
 export default App;

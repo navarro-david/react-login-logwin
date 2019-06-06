@@ -2,27 +2,27 @@ $color_gradient_1: #4b6cb7;
 $color_gradient_2: #182848;
 
 @mixin input-focus-state-mixin($hex-color: #969696) {
-  &:focus {
-    box-shadow: none;
-    box-shadow: 0 0 0 2px rgba($hex-color, 0.56);
-    border-color: $hex-color;
-    outline: none;
-  }
+    &:focus {
+        box-shadow: none;
+        box-shadow: 0 0 0 2px rgba($hex-color, 0.56);
+        border-color: $hex-color;
+        outline: none;
+    }
 }
 
 :global input {
-  @include input-focus-state-mixin();
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  padding: 0.75em;
-  border: 1px solid #e0e0e0;
-  box-shadow: none;
+    @include input-focus-state-mixin();
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    padding: 0.75em;
+    border: 1px solid #e0e0e0;
+    box-shadow: none;
 }
 
 :global .effect_fade {
-  transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.effect_scary_text{
+.effect_scary_text {
     // text-transform: uppercase;
     // letter-spacing: 2px;
     color: #ed213a;
@@ -30,140 +30,140 @@ $color_gradient_2: #182848;
 }
 
 .btn_submit {
-  $btn_submit_height: 50px;
-  @include input-focus-state-mixin($color_gradient_1);
+    $btn_submit_height: 50px;
+    @include input-focus-state-mixin($color_gradient_1);
 
-  position: relative;
-  padding: 0 2rem;
-  height: $btn_submit_height;
+    position: relative;
+    padding: 0 2rem;
+    height: $btn_submit_height;
 
-  border-radius: $btn_submit_height / 2;
-  background: $color_gradient_1;
-  color: #ffffff;
-  border: none;
-  font-size: 1.1em;
-  font-weight: 700;
-
-  z-index: 1;
-
-  transition: all 0.3s ease-in-out;
-
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(
-      225deg,
-      $color_gradient_1 0%,
-      $color_gradient_2 100%
-    );
-    z-index: -1;
-    transition: all 0.3s linear;
-    opacity: 0;
     border-radius: $btn_submit_height / 2;
-  }
+    background: $color_gradient_1;
+    color: #ffffff;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 700;
 
-  &:hover:not([disabled]) {
-    filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.25));
+    z-index: 1;
+
+    transition: all 0.3s ease-in-out;
+
     &::before {
-      opacity: 1;
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+            225deg,
+            $color_gradient_1 0%,
+            $color_gradient_2 100%
+        );
+        z-index: -1;
+        transition: all 0.3s linear;
+        opacity: 0;
+        border-radius: $btn_submit_height / 2;
     }
-  }
 
-  &[disabled] {
-    filter: grayscale(55%);
-    opacity: 0.56;
-  }
+    &:hover:not([disabled]) {
+        filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.25));
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &[disabled] {
+        filter: grayscale(55%);
+        opacity: 0.56;
+    }
 }
 
 .card {
-  height: 500px;
-  width: 600px;
+    height: 500px;
+    width: 600px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-
-  border-radius: 4px;
-  background: #ffffff;
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.25));
-
-  @at-root .card_column {
-    @mixin card_column_mixin {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-    }
-    &_form {
-      @include card_column_mixin();
-      flex: 4 0 0;
-    }
-    &_content {
-      @include card_column_mixin();
-      flex: 5 0 0;
-      background: $color_gradient_1;
-      background: linear-gradient(
-        45deg,
-        $color_gradient_1 0%,
-        $color_gradient_2 100%
-      );
-      color: #ffffff;
-      align-items: flex-start;
-    }
-  }
-}
-
-.card_header {
-  font-size: 32px;
-  font-weight: 900;
-  background: -webkit-linear-gradient(
-    225deg,
-    $color_gradient_1 0%,
-    $color_gradient_2 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.card_form {
-  margin: 1rem 0;
-  font-size: 12px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  > * {
-    margin-bottom: 8px;
-  }
-
-  fieldset {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 0 0;
 
-    margin-bottom: 18px;
+    overflow: hidden;
+
     border-radius: 4px;
-    border: 1px $color_gradient_1 solid;
+    background: #ffffff;
+    filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.25));
 
-    legend {
-      color: $color_gradient_2;
+    @at-root .card_column {
+        @mixin card_column_mixin {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        &_form {
+            @include card_column_mixin();
+            flex: 4 0 0;
+        }
+        &_content {
+            @include card_column_mixin();
+            flex: 5 0 0;
+            background: $color_gradient_1;
+            background: linear-gradient(
+                45deg,
+                $color_gradient_1 0%,
+                $color_gradient_2 100%
+            );
+            color: #ffffff;
+            align-items: flex-start;
+        }
+    }
+}
+
+.card_header {
+    font-size: 32px;
+    font-weight: 900;
+    background: -webkit-linear-gradient(
+        225deg,
+        $color_gradient_1 0%,
+        $color_gradient_2 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card_form {
+    margin: 1rem 0;
+    font-size: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > * {
+        margin-bottom: 8px;
     }
 
-    input {
-      &:not(:last-child) {
-        margin-bottom: 4px;
-      }
+    fieldset {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 0 0;
+
+        margin-bottom: 18px;
+        border-radius: 4px;
+        border: 1px $color_gradient_1 solid;
+
+        legend {
+            color: $color_gradient_2;
+        }
+
+        input {
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
     }
-  }
 }
